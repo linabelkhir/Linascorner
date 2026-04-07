@@ -87,11 +87,12 @@ function reserveer() {
     let personenElem = document.getElementById("personen");
     let emailElem = document.getElementById("email");
    
-    let tijdElem = document.getElementById("tijd").value;  // Haal de tijd op	
-    if (tijdElem < "07:00" || tijdElem > "23:00") {
-        alert("Kies een tijd tussen 07:00 en 23:00");
-        return;
-    }
+    let tijdElem = document.getElementById("tijd");  // Haal de tijd op	
+    let uur = parseInt(tijdElem.value.split(":")[0], 10);
+	if (uur < 7 || uur > 23) {
+		alert("Kies een tijd tussen 07:00 en 23:00");
+		return;
+	}
 		
 	
     let datumElem = document.getElementById("datum"); // Haal de datum op
